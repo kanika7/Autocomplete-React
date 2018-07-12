@@ -14,12 +14,12 @@ class AutoComplete extends Component {
         const filteredArr = [];
         const filterText = this.props.searchStr
         namesData.filter((name) => {
-            (name.toLowerCase().indexOf(filterText.toLowerCase()) > -1) ? filteredArr.push(name) : ''               
+            (name.toLowerCase().indexOf(filterText.toLowerCase()) > -1) ? filteredArr.push(name) : filteredArr               
         })    
         return (
             <ul className="nameList">
-                {filteredArr.map((arr) => 
-                    <li>
+                {filteredArr.map((arr, i) => 
+                    <li key={i}>
                         {arr}
                     </li>
                     )
